@@ -12,8 +12,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/:character' element={<Character />} />
-        <Route path='/' element={<Navigate to='A' />} />
+        <Route path='/character-viewer/:character' element={<Character />} />
+        <Route path='/character-viewer/' element={<Navigate to='A' />} />
       </Routes>
     </BrowserRouter>
   );
