@@ -32,7 +32,7 @@ const Character = () => {
     if (charCode > charCodeZ) {
       charCode = charCodeA
     }
-    return '/' + String.fromCharCode(charCode);
+    return '/character-viewer/' + String.fromCharCode(charCode);
   })();
   return (
     <Link to={nextCharacter}>{params.character}</Link>
