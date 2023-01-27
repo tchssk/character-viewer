@@ -32,7 +32,26 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+a {
+  align-items: center;
+  display: flex;
+  font-size: 100dvmin;
+  height: 100dvh;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:focus,
+a:hover,
+a:active {
+  color: black;
 }
