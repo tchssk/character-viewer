@@ -1,21 +1,21 @@
 import {
-  BrowserRouter,
+  HashRouter,
   Link,
   Navigate,
-  Routes,
   Route,
+  Routes,
   useParams,
 } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-        <Route path='/character-viewer/:character' element={<Character />} />
-        <Route path='/character-viewer/' element={<Navigate to='A' />} />
+        <Route path='/:character' element={<Character />} />
+        <Route path='/' element={<Navigate to='A' />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
@@ -32,7 +32,7 @@ const Character = () => {
     if (charCode > charCodeZ) {
       charCode = charCodeA
     }
-    return '/character-viewer/' + String.fromCharCode(charCode);
+    return '/' + String.fromCharCode(charCode);
   })();
   return (
     <Link to={nextCharacter}>{params.character}</Link>
