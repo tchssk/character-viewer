@@ -38,8 +38,22 @@
   }
 }
 
+@keyframes huerotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
 a {
   align-items: center;
+  animation: huerotate 30s linear infinite;
+  background-color: #ef9a9a
+    /* From Material UI color palette */
+  ;
   display: flex;
   font-size: 100dvmin;
   height: 100dvh;
