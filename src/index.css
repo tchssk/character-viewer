@@ -1,14 +1,28 @@
+@keyframes huerotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
 html {
   height: 100%;
 }
 
 body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  animation: huerotate 30s linear infinite;
+  background-color: #ef9a9a
+    /* From Material UI color palette */
+  ;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
