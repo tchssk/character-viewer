@@ -36,7 +36,6 @@ div#root {
   height: 100%;
   margin: auto;
   min-height: 100%;
-  overflow: hidden;
   vertical-align: middle;
   width: 100%;
 }

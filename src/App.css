@@ -38,6 +38,17 @@
   }
 }
 
+a.index {
+  align-items: center;
+  display: flex;
+  float: left;
+  font-size: 25dvw;
+  width: 25dvw;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+}
+
 a.character {
   align-items: center;
   display: flex;

@@ -1,7 +1,6 @@
 import {
   HashRouter,
   Link,
-  Navigate,
   Route,
   Routes,
   useParams,
@@ -13,9 +12,28 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path='/:character' element={<Character />} />
-        <Route path='/' element={<Navigate to='A' />} />
+        <Route path='/' element={<Index />} />
       </Routes>
     </HashRouter>
+  );
+}
+
+const Index = () => {
+  const charCodeA = 'A'.charCodeAt(0);
+  const charCodeZ = 'Z'.charCodeAt(0);
+  const links: JSX.Element[] = (() => {
+    const list: JSX.Element[] = [];
+    for (let charCode = charCodeA; charCode <= charCodeZ; charCode++) {
+      const character = String.fromCharCode(charCode);
+      console.log(character);
+      list.push(<Link className='index' key={character} to={'/' + character}>{character}</Link>);
+    }
+    return list;
+  })();
+  return (
+    <>
+      {links}
+    </>
   );
 }
 
