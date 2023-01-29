@@ -21,6 +21,7 @@ a.index {
   justify-content: center;
   text-align: center;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a.fullscreen {
@@ -29,6 +30,7 @@ a.fullscreen {
   position: absolute;
   top: 0;
   width: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a.character {
@@ -42,6 +44,7 @@ a.character {
   text-align: center;
   text-decoration: none;
   width: 50dvw;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a:link,
