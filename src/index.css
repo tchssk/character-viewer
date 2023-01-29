@@ -9,6 +9,10 @@
 }
 
 html {
+  animation: huerotate 30s linear infinite;
+  background-color: #ef9a9a
+    /* From Material UI color palette */
+  ;
   height: 100%;
 }
 
@@ -29,10 +33,6 @@ code {
 }
 
 div#root {
-  animation: huerotate 30s linear infinite;
-  background-color: #ef9a9a
-    /* From Material UI color palette */
-  ;
   height: 100%;
   margin: auto;
   min-height: 100%;
