@@ -53,7 +53,10 @@ const Character = () => {
     return '/' + String.fromCharCode(charCode);
   })();
   return (
-    <Link className='character' to={nextCharacter}>{params.character}</Link>
+    <>
+      <Link className='fullscreen' to={'/'} />
+      <Link className='character' to={nextCharacter}>{params.character}</Link>
+    </>
   );
 };
 

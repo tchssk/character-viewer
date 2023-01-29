@@ -23,14 +23,25 @@ a.index {
   text-decoration: none;
 }
 
+a.fullscreen {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 a.character {
   align-items: center;
   display: flex;
   font-size: 100dvmin;
-  height: 100dvh;
+  height: 75dvh;
   justify-content: center;
+  margin: 12.5dvh 25dvw;
+  position: relative;
   text-align: center;
   text-decoration: none;
+  width: 50dvw;
 }
 
 a:link,
