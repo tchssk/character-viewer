@@ -35,7 +35,7 @@ const Character = () => {
     return '/' + String.fromCharCode(charCode);
   })();
   return (
-    <Link to={nextCharacter}>{params.character}</Link>
+    <Link className='character' to={nextCharacter}>{params.character}</Link>
   );
 };
 

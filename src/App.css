@@ -38,7 +38,7 @@
   }
 }
 
-a {
+a.character {
   align-items: center;
   display: flex;
   font-size: 100dvmin;
