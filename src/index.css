@@ -13,10 +13,6 @@ html {
 }
 
 body {
-  animation: huerotate 30s linear infinite;
-  background-color: #ef9a9a
-    /* From Material UI color palette */
-  ;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -33,6 +29,10 @@ code {
 }
 
 div#root {
+  animation: huerotate 30s linear infinite;
+  background-color: #ef9a9a
+    /* From Material UI color palette */
+  ;
   height: 100%;
   margin: auto;
   min-height: 100%;
