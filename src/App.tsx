@@ -1,8 +1,12 @@
 import {
+  useEffect
+} from 'react';
+import {
   HashRouter,
   Link,
   Route,
   Routes,
+  useLocation,
   useParams,
 } from 'react-router-dom';
 import './App.css';
@@ -10,12 +14,21 @@ import './App.css';
 function App() {
   return (
     <HashRouter>
+      <ScrollToTop />
       <Routes>
         <Route path='/:character' element={<Character />} />
         <Route path='/' element={<Index />} />
       </Routes>
     </HashRouter>
   );
+}
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
 }
 
 const Index = () => {
