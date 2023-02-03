@@ -11,6 +11,9 @@ import {
 } from 'react-router-dom';
 import './App.css';
 
+const charCodeA = 'A'.charCodeAt(0);
+const charCodeZ = 'Z'.charCodeAt(0);
+
 function App() {
   return (
     <HashRouter>
@@ -32,8 +35,6 @@ const ScrollToTop = () => {
 }
 
 const Index = () => {
-  const charCodeA = 'A'.charCodeAt(0);
-  const charCodeZ = 'Z'.charCodeAt(0);
   const links: JSX.Element[] = (() => {
     const list: JSX.Element[] = [];
     for (let charCode = charCodeA; charCode <= charCodeZ; charCode++) {
@@ -53,8 +54,6 @@ const Character = () => {
   const params = useParams();
   const character = params.character ?? 'A';
   const nextCharacter = (() => {
-    const charCodeA = 'A'.charCodeAt(0);
-    const charCodeZ = 'Z'.charCodeAt(0);
     let charCode = character.charCodeAt(0) + 1;
     if (charCode < charCodeA) {
       charCode = charCodeZ
