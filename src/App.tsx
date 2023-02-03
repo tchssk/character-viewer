@@ -38,7 +38,6 @@ const Index = () => {
     const list: JSX.Element[] = [];
     for (let charCode = charCodeA; charCode <= charCodeZ; charCode++) {
       const character = String.fromCharCode(charCode);
-      console.log(character);
       list.push(<Link className='index' key={character} to={'/' + character}>{character}</Link>);
     }
     return list;
