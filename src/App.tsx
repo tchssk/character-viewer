@@ -18,8 +18,8 @@ function App() {
     <HashRouter>
       <ScrollToTop />
       <Routes>
-        <Route path='/:character' element={<Character />} />
         <Route path='/' element={<Index />} />
+        <Route path='/:character' element={<Character />} />
       </Routes>
     </HashRouter>
   );
