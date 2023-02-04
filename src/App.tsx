@@ -8,6 +8,7 @@ import {
   Routes,
   useLocation,
   useParams,
+  useSearchParams,
 } from 'react-router-dom';
 import './App.css';
 
@@ -36,19 +37,22 @@ const ScrollToTop = () => {
 const Index = () => {
   return (
     <>
-      {alphabet.map((character) => <Link className='index' key={character} to={{ pathname: '/' + character }}>{character}</Link>)}
+      {alphabet.map((character) => <Link className='index' key={character} to={{ pathname: '/' + character, search: character !== alphabet[0] ? '?random' : undefined }}>{character}</Link>)}
     </>
   );
 }
 
 const Character = () => {
   const params = useParams();
+  const [searchParams] = useSearchParams();
+
+  const random = searchParams.has('random');
   const character = params.character ?? 'A';
-  const nextCharacter = alphabet[(alphabet.findIndex((element) => element === character) + 1) % alphabet.length];
+  const nextCharacter = alphabet[(alphabet.findIndex((element) => element === character) + (random ? Math.floor(Math.random() * (alphabet.length - 1)) + 1 : 1)) % alphabet.length];
   return (
     <>
       <Link className='fullscreen' to={{ pathname: '/' }} />
-      <Link className='character' to={{ pathname: '/' + nextCharacter }}>{params.character}</Link>
+      <Link className='character' to={{ pathname: '/' + nextCharacter, search: random ? '?random' : undefined }}>{params.character}</Link>
     </>
   );
 };
