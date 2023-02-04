@@ -11,8 +11,7 @@ import {
 } from 'react-router-dom';
 import './App.css';
 
-const charCodeA = 'A'.charCodeAt(0);
-const charCodeZ = 'Z'.charCodeAt(0);
+const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 function App() {
   return (
@@ -35,17 +34,9 @@ const ScrollToTop = () => {
 }
 
 const Index = () => {
-  const links: JSX.Element[] = (() => {
-    const list: JSX.Element[] = [];
-    for (let charCode = charCodeA; charCode <= charCodeZ; charCode++) {
-      const character = String.fromCharCode(charCode);
-      list.push(<Link className='index' key={character} to={'/' + character}>{character}</Link>);
-    }
-    return list;
-  })();
   return (
     <>
-      {links}
+      {alphabet.map((character) => <Link className='index' key={character} to={'/' + character}>{character}</Link>)}
     </>
   );
 }
@@ -53,20 +44,11 @@ const Index = () => {
 const Character = () => {
   const params = useParams();
   const character = params.character ?? 'A';
-  const nextCharacter = (() => {
-    let charCode = character.charCodeAt(0) + 1;
-    if (charCode < charCodeA) {
-      charCode = charCodeZ
-    }
-    if (charCode > charCodeZ) {
-      charCode = charCodeA
-    }
-    return '/' + String.fromCharCode(charCode);
-  })();
+  const nextCharacter = alphabet[(alphabet.findIndex((element) => element === character) + 1) % alphabet.length];
   return (
     <>
       <Link className='fullscreen' to={'/'} />
-      <Link className='character' to={nextCharacter}>{params.character}</Link>
+      <Link className='character' to={'/' + nextCharacter}>{params.character}</Link>
     </>
   );
 };
