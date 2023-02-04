@@ -36,7 +36,7 @@ const ScrollToTop = () => {
 const Index = () => {
   return (
     <>
-      {alphabet.map((character) => <Link className='index' key={character} to={'/' + character}>{character}</Link>)}
+      {alphabet.map((character) => <Link className='index' key={character} to={{ pathname: '/' + character }}>{character}</Link>)}
     </>
   );
 }
@@ -47,8 +47,8 @@ const Character = () => {
   const nextCharacter = alphabet[(alphabet.findIndex((element) => element === character) + 1) % alphabet.length];
   return (
     <>
-      <Link className='fullscreen' to={'/'} />
-      <Link className='character' to={'/' + nextCharacter}>{params.character}</Link>
+      <Link className='fullscreen' to={{ pathname: '/' }} />
+      <Link className='character' to={{ pathname: '/' + nextCharacter }}>{params.character}</Link>
     </>
   );
 };
