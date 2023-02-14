@@ -13,6 +13,8 @@ import {
 import './App.css';
 
 const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+const list = [alphabet, numbers];
 
 function App() {
   return (
@@ -37,7 +39,11 @@ const ScrollToTop = () => {
 const Index = () => {
   return (
     <>
-      {alphabet.map((character) => <Link className='index' key={character} to={{ pathname: '/' + character, search: character !== alphabet[0] ? '?random' : undefined }}>{character}</Link>)}
+      {list.map((characters) => (
+        <div className='container'>
+          {characters.map((character, i) => <Link className='index' key={character} to={{ pathname: '/' + character, search: character !== characters[0] ? '?random' : undefined }}>{character}</Link>)}
+        </div>
+      ))}
     </>
   );
 }
@@ -48,7 +54,8 @@ const Character = () => {
 
   const random = searchParams.has('random');
   const character = params.character ?? 'A';
-  const nextCharacter = alphabet[(alphabet.findIndex((element) => element === character) + (random ? Math.floor(Math.random() * (alphabet.length - 1)) + 1 : 1)) % alphabet.length];
+  const characters = list.find(element => element.includes(character)) ?? alphabet;
+  const nextCharacter = characters[(characters.findIndex((element) => element === character) + (random ? Math.floor(Math.random() * (characters.length - 1)) + 1 : 1)) % characters.length];
   return (
     <>
       <Link className='fullscreen' to={{ pathname: '/' }} />

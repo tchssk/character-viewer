@@ -12,6 +12,10 @@
   }
 }
 
+div.container {
+  float: left;
+}
+
 a.index {
   align-items: center;
   display: flex;
